@@ -1,5 +1,6 @@
 var http = require("http");
 var fs = require("fs");
+var tokens = fs.readFileSync('./data/tokens.txt','utf8').split(',').map(x=>parseInt(x))
 
 //create a server object:
 http
