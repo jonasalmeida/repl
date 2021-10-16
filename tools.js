@@ -1,19 +1,19 @@
 //repl = function(){}
 
-get = async function (url='http://localhost:3000',format='text'){
+async function get(url='http://localhost:3000',format='text'){
     return (await fetch(url))[format]()
 }
 
-post = async function (url='http://localhost:3000',data={hello:'world!',at:Date()},format='text'){
+async function post(url='http://localhost:3000',data={hello:'world!',at:Date()},format='text'){
     return (await fetch(url,{
         method:"POST",
         body:JSON.stringify(data)
     }))[format]()
 }
 
-makeTokens = function(n){
+function makeTokens(n){
   return [...Array(n)].
   map(_=>Math.random().toString().slice(2))
 }
 
-// more
+export {get,post,makeTokens}
